@@ -1,0 +1,165 @@
+<?xml version="1.0" ?>
+<robot name="eic_bot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find eic_bot_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find eic_bot_description)/urdf/eic_bot.trans" />
+<xacro:include filename="$(find eic_bot_description)/urdf/eic_bot.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin xyz="0.000294157102495685 2.947535498460932e-17 0.052485340668322555" rpy="0 0 0"/>
+    <mass value="0.9812241966714506"/>
+    <inertia ixx="0.002167" iyy="0.003572" izz="0.004353" ixy="-0.0" iyz="0.0" ixz="0.000149"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://eic_bot_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://eic_bot_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="r_wheel_1">
+  <inertial>
+    <origin xyz="-1.6542323066914832e-14 -0.012499999999999997 6.938893903907228e-18" rpy="0 0 0"/>
+    <mass value="0.09971412326008154"/>
+    <inertia ixx="4.1e-05" iyy="7.2e-05" izz="4.1e-05" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.037 0.087 -0.042" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://eic_bot_description/meshes/r_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.037 0.087 -0.042" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://eic_bot_description/meshes/r_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="l_wheel__1">
+  <inertial>
+    <origin xyz="-1.6542323066914832e-14 0.012500000000000011 6.938893903907228e-18" rpy="0 0 0"/>
+    <mass value="0.09971412326008154"/>
+    <inertia ixx="4.1e-05" iyy="7.2e-05" izz="4.1e-05" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.037 -0.087 -0.042" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://eic_bot_description/meshes/l_wheel__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.037 -0.087 -0.042" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://eic_bot_description/meshes/l_wheel__1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="cam_1">
+  <inertial>
+    <origin xyz="0.00347757201957773 6.290535465421874e-18 0.0" rpy="0 0 0"/>
+    <mass value="0.0009318725889462407"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.02 -0.0 -0.1595" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://eic_bot_description/meshes/cam_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.02 -0.0 -0.1595" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://eic_bot_description/meshes/cam_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="lidar_1">
+  <inertial>
+    <origin xyz="6.938893903907228e-18 5.092452206886448e-18 0.00494280996697688" rpy="0 0 0"/>
+    <mass value="0.036835550854458755"/>
+    <inertia ixx="8e-06" iyy="8e-06" izz="1.6e-05" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.05 -0.0 -0.0845" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://eic_bot_description/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.05 -0.0 -0.0845" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://eic_bot_description/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="caster_1">
+  <inertial>
+    <origin xyz="-0.037000000000000005 -8.496525080399244e-18 -0.012074107142857143" rpy="0 0 0"/>
+    <mass value="0.02659352945276006"/>
+    <inertia ixx="3e-06" iyy="3e-06" izz="4e-06" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.1 -0.0 -0.0295" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://eic_bot_description/meshes/caster_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.1 -0.0 -0.0295" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://eic_bot_description/meshes/caster_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="r_joint" type="continuous">
+  <origin xyz="-0.037 -0.087 0.042" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="r_wheel_1"/>
+  <axis xyz="0.0 -1.0 0.0"/>
+</joint>
+
+<joint name="l_joint" type="continuous">
+  <origin xyz="-0.037 0.087 0.042" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="l_wheel__1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="cam_joint" type="fixed">
+  <origin xyz="-0.02 0.0 0.1595" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="cam_1"/>
+</joint>
+
+<joint name="lidar_joint" type="fixed">
+  <origin xyz="0.05 0.0 0.0845" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="lidar_1"/>
+</joint>
+
+<joint name="caster_joint" type="fixed">
+  <origin xyz="0.1 0.0 0.0295" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="caster_1"/>
+</joint>
+
+</robot>
